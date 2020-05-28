@@ -1,0 +1,22 @@
+﻿@{
+
+    Layout = null;
+    var user = ViewData["user"] as demo1.Models.User;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <!--页面使用方式：-->
+        <h1>@ViewData["msg"]</h1>
+        <p>@user.UserID</p>
+        <p>@user.UserName</p>
+    </div>
+</body>
+</html>

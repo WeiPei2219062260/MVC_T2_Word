@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+    var user = TempData["user"] as demo1.Models.User;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Show</title>
+</head>
+<body>
+    <div>
+        <!--Session跨页面传值-->
+        <h1>欢迎回来：@Session["UserID"]！</h1>
+        <!--TempData跨页面传值-->
+        <p>ID：@user.UserID</p>
+        <p>姓名：@user.UserName</p>
+    </div>
+</body>
+</html>
