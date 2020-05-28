@@ -1,0 +1,101 @@
+﻿@{
+    Layout = null;
+    List<demo2.Models.Student_Data> studentList = ViewBag.studentList as List<demo2.Models.Student_Data>;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body #header {
+            width: 100%;
+            background-color: aliceblue;
+            text-align: center;
+            height: 80px;
+            line-height: 80px;
+            font-family: "Microsoft YaHei";
+        }
+
+        table {
+            width: 90%; /*宽度*/
+            margin: 10px auto;
+            border-collapse: collapse; /*border-collapse:collapse合并内外边距(去除表格单元格默认的2个像素内外边距*/
+        }
+
+        th, td {
+            height: 25px; /*设置高度*/
+            line-height: 25px; /*设置行高 行高和高度一样 文字垂直居中*/
+            text-align: center; /*文字水平居中*/
+            border: 1px solid #ccc; /*设置边框大小 实线 颜色*/
+        }
+
+        th {
+            background: #eee; /*设置表头的背景颜色*/
+        }
+
+        tr {
+            background: #fff; /*设置行的背景颜色*/
+        }
+            /*表格行的悬浮样式*/
+            tr:hover {
+                background-color: #cc0;
+            }
+
+        body #footer {
+            width: 100%;
+            height: 80px;
+            background-color: aliceblue;
+        }
+
+            body #footer #footer_content {
+                width: 90%;
+                margin: 0px auto;
+            }
+
+        body #secthio {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="header">
+            <h1>学生信息表</h1>
+        </div>
+
+        <div id="secthio">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>StudentName</th>
+                    <th>StudentSex</th>
+                    <th>StudentAge</th>
+                </tr>
+                @foreach (var item in studentList)
+                {
+                    <tr>
+                        <td>@item.StudentID</td>
+                        <td>@item.StudentName</td>
+                        <td>@item.StudentSex</td>
+                        <td>@item.StudentAge</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+        <div id="footer">
+            <div id="footer_content">
+                © 2020 - 移动1805班的 信息资料表
+            </div>
+        </div>
+    </div>
+</body>
+</html>
