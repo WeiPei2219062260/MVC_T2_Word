@@ -75,3 +75,9 @@ F:\课堂\MVC\MVC_T3\demo1\obj\Debug\demo1.csprojAssemblyReference.cache
 F:\课堂\MVC\MVC_T3\demo1\obj\Debug\demo1.csproj.CopyComplete
 F:\课堂\MVC\MVC_T3\demo1\obj\Debug\demo1.dll
 F:\课堂\MVC\MVC_T3\demo1\obj\Debug\demo1.pdb
+F:\课堂\MVC\MVC_T3\demo1\bin\EntityFramework.dll
+F:\课堂\MVC\MVC_T3\demo1\bin\EntityFramework.SqlServer.dll
+F:\课堂\MVC\MVC_T3\demo1\bin\EntityFramework.xml
+F:\课堂\MVC\MVC_T3\demo1\bin\EntityFramework.SqlServer.xml
+F:\课堂\MVC\MVC_T3\demo1\bin\zh-Hans\EntityFramework.resources.dll
+F:\课堂\MVC\MVC_T3\demo1\bin\zh-Hans\EntityFramework.SqlServer.resources.dll

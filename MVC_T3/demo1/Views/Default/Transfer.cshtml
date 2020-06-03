@@ -1,0 +1,71 @@
+﻿@model  List<demo1.Models.Student_Data>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- BootstrapC核心CSS文件 -->
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css" />
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Jquery文件 务必在bootstrap.min.js之前引用 -->
+    <script src="~/bootstrap/js/jquery.slim.min.js"></script>
+    <script src="~/bootstrap/js/popper.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+    <title>Hello, world!</title>
+</head>
+<body>
+    <div>
+        <h1><a href="/Default/Add/">Add student information</a></h1>
+        <table class="table table-striped">
+            <table class="table table-striped">
+                <thead>
+
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            StudentID
+                        </th>
+                        <th scope="col">
+                            StudentName
+                        </th>
+                        <th scope="col">
+                            Operation
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.StudentID
+                            </td>
+
+                            <td>
+                                @item.StudentName
+                            </td>
+                            <td>
+                                <!--路由传参-->
+                                <!--查询详情-->
+                                <a href="/Default/Show/@item.StudentID">Show</a>
+                                <!--删除-->
+                                <a href="/Default/Delete/@item.StudentID">Delete</a>
+                                <!--编辑-->
+                                <a href="/Default/Redact/@item.StudentID">Redact</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+    </div>
+</body>
+</html>
