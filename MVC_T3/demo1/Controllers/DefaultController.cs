@@ -63,21 +63,35 @@ namespace demo1.Controllers
             return View(student);
         }
 
-        public ActionResult Update(string StudentID, string StudentName, string StudentAge, string StudetnSex)
+        [HttpPost]
+        public ActionResult Update(Student_Data student)
         {
-            string s0 = StudentID;
-            int i1 = Convert.ToInt32(StudentID);
-            string s1 = StudentName;
-            int i2 = Convert.ToInt32(StudentAge);
-            string s2 = StudetnSex;
-
-            if (UpStudent(Convert.ToInt32(StudentID), StudentName, Convert.ToInt32(StudentAge), StudetnSex))
+            if (UpStudent(student))
             {
                 return Content("<script>alert('操作成功！');window.location.href='/Default/Transfer'</script>");
             }
             else
             {
                 return Content("<script>alert('操作失败！');window.location.href='/Default/Transfer'</script>");
+            }
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(string Email, string Password)
+        {
+            if (Email.Equals("123@qq.com") && Password.Equals("123"))
+            {
+                return Content("<script>alert('登陆成功！');window.location.href='/Default/Transfer'</script>");
+                //return RedirectToAction("/Default/Transfer");
+            }
+            else
+            {
+                return View();
             }
         }
 
@@ -114,15 +128,15 @@ namespace demo1.Controllers
         }
 
         //更新学生信息
-        private bool UpStudent(int StudentID, string StudentName, int StudentAge, string StudentSex)
+        private bool UpStudent(Student_Data student1)
         {
-            var student = SelectforID(StudentID);
-            student.StudentID = StudentID;
-            student.StudentName = StudentName;
-            student.StudentAge = StudentAge;
-            student.StudentSex = StudentSex;
-            var result = studentEntities.SaveChanges();
-            return result > 0;
+            var student = SelectforID(student1.StudentID);
+            student.StudentName = student1.StudentName;
+            student.StudentAge = student1.StudentAge;
+            student.StudentSex = student1.StudentSex;
+
+            studentEntities.SaveChanges();
+            return 1 > 0;
         }
     }
 }

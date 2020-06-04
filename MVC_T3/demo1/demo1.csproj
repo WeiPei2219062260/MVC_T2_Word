@@ -176,6 +176,7 @@
     <Content Include="Views\Default\Show.cshtml" />
     <Content Include="Views\Default\Add.cshtml" />
     <Content Include="Views\Default\Redact.cshtml" />
+    <Content Include="Views\Default\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
