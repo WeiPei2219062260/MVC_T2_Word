@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>
+            我是表单
+        </h1>
+        @using (Html.BeginForm())
+        {
+            <!--文本框-->
+            <p>
+                姓名：@Html.TextBox("Name")
+            </p>
+
+            <p>
+                密码：@Html.Password("Pwd")
+            </p>
+
+            <!--单选框-->
+            <p>
+                性别:@Html.RadioButton("sex", "1") 男
+                @Html.RadioButton("sex", "0") 女
+            </p>
+            <!--多选框-->
+            <p>
+                爱好:@Html.CheckBox("fav1", new { @value = "swim" }) 游泳
+                @Html.CheckBox("fav2", new { @value = "music" }) 音乐
+                @Html.CheckBox("fav3", new { @value = "game" }) 吃鸡
+            </p>
+
+            <!--下拉框-->
+            <p>
+                职业：
+                @Html.DropDownList("job", new SelectList(new[] { "女医生", "女护士", "女教师" }))
+            </p>
+        }
+    </div>
+</body>
+</html>

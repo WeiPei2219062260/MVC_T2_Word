@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <!--文本框-->
+            <p>
+                账号：@Html.TextBox("Name")
+            </p>
+
+            <p>
+                密码：@Html.Password("Pwd")
+            </p>
+            <p>
+                确认密码：@Html.Password("Pwd")
+            </p>
+            <p>
+                国家：
+                @Html.DropDownList("nationality", new SelectList(new[] { "中国", "美国", "硬度" }))
+            </p>
+
+            <!--单选框-->
+            <p>
+                @Html.CheckBox("yes", new { @value = "yes" }) 吃鸡 同意《用户服务协议》
+            </p>
+
+            <p>
+                <button>
+                    注册
+                </button>
+            </p>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- BootstrapC核心CSS文件 -->
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css" />
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Jquery文件 务必在bootstrap.min.js之前引用 -->
+    <script src="~/bootstrap/js/jquery.slim.min.js"></script>
+    <script src="~/bootstrap/js/popper.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+    <title>Hello, world!</title>
+</head>
+<body>
+    @Html.ActionLink("显示", "Show", new { Id = 1, Name = "任炳学" }, new { @class = "text-decoration-none" })
+    <!--跨视图跳转-->
+    @Html.ActionLink("注册", "Register", "User", new { Id = 1, Name = "任炳学" }, new { @class = "text-decoration-none" })
+</body>
+</html>
